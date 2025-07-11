@@ -18,15 +18,14 @@ for lines in file:
         left = int(splitted[idx])
         right = int(splitted[idx+1])
 
-        level_decreasing = abs(int(splitted[idx]) - int(splitted[idx+1]))
+        levels_difference = abs(int(splitted[idx]) - int(splitted[idx+1]))
 
         # ugly solve
         if (left > right and order != None and order == 1) or (left < right and order != None and order == -1) or left == right:
             unsafes+=1
             break;
     
-        if level_decreasing > 3:
-            print(level_decreasing)
+        if levels_difference > 3:
             unsafes+=1
             break
 
