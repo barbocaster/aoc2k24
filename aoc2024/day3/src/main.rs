@@ -19,7 +19,7 @@ impl Scanner {
 
         let mut get_next = self.peek();
 
-        while self.text[get_next].is_alphabetic() && self.at_end() != true {
+        while self.text[get_next].is_alphabetic() && !self.at_end() {
             new_string.push_str(self.text[get_next].to_string().as_str());
             self.advance();
             get_next = self.peek();
@@ -34,7 +34,7 @@ impl Scanner {
 
         let mut get_next = self.peek();
 
-        while self.text[get_next].is_numeric() && self.at_end() != true {
+        while self.text[get_next].is_numeric() && !self.at_end() {
             new_string.push_str(self.text[get_next].to_string().as_str());
             self.advance();
             get_next = self.peek();
