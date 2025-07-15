@@ -43,7 +43,7 @@ impl Scanner {
         new_string
     }
 
-    fn string(&mut self) {
+    fn multiply(&mut self) {
         if !self.identifier().contains("mul(") {
             return
         }
@@ -117,7 +117,7 @@ fn main() {
         let character = scanner.text[scanner.position];
 
         match character {
-            'a'..'z' => scanner.string(),
+            'a'..'z' => scanner.multiply(),
             _ => continue
         };
     }
