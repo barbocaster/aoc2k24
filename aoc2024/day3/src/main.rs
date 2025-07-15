@@ -15,7 +15,6 @@ impl Scanner {
     }
 
     fn identifier(&mut self) -> String {
-
         let mut new_string = String::new();
 
         let mut get_next = self.peek();
@@ -25,7 +24,8 @@ impl Scanner {
             self.advance();
             get_next = self.peek();
         }
-
+        
+        new_string.push_str("(");
         new_string 
     }
 
@@ -44,8 +44,7 @@ impl Scanner {
     }
 
     fn string(&mut self) {
-
-        if !self.identifier().contains("mul") {
+        if !self.identifier().contains("mul(") {
             return
         }
     
